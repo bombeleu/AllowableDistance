@@ -1,0 +1,59 @@
+﻿using UnityEngine;
+using UnityEditor;
+using System.Collections;
+
+[CustomEditor(typeof(AllowableDistance))]
+public class AllowableDistanceEditor: Editor
+{
+	AllowableDistance myDistance;
+
+	public void OnEnable()
+	{
+		myDistance = (AllowableDistance)target;
+	}
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
+
+	public override void OnInspectorGUI ()
+	{
+		myDistance.allowableDistance = EditorGUILayout.FloatField("Allowable Distance", myDistance.allowableDistance);
+
+		Resize();
+
+		Repaint();
+	}
+
+	public void OnSceneGUI()
+	{
+		myDistance.allowableDistance = Handles.RadiusHandle( Quaternion.identity, myDistance.transform.position, myDistance.allowableDistance);
+
+		Handles.color = Color.blue;
+		Handles.CircleCap( 0, myDistance.transform.position, myDistance.transform.rotation, myDistance.allowableDistance);
+
+		Resize();
+
+		Repaint();
+	}
+
+	void Resize()
+	{
+		if(myDistance.allowableDistance <= 0.1f)
+			myDistance.allowableDistance = 0.1f;
+	}
+
+<<<<<<< HEAD
+	void RePaint()
+	{
+		if (GUI.changed)
+			EditorUtility.SetDirty (target);
+=======
+	
+	void Repaint()
+	{
+		if (GUI.changed)
+			EditorUtility.SetDirty (target);	
+>>>>>>> origin/master
+	}
+}
