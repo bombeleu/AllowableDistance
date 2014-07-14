@@ -11,10 +11,6 @@ public class AllowableDistanceEditor: Editor
 	{
 		myDistance = (AllowableDistance)target;
 	}
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/master
 
 	public override void OnInspectorGUI ()
 	{
@@ -43,17 +39,9 @@ public class AllowableDistanceEditor: Editor
 			myDistance.allowableDistance = 0.1f;
 	}
 
-<<<<<<< HEAD
 	void RePaint()
 	{
 		if (GUI.changed)
 			EditorUtility.SetDirty (target);
-=======
-	
-	void Repaint()
-	{
-		if (GUI.changed)
-			EditorUtility.SetDirty (target);	
->>>>>>> origin/master
 	}
 }
