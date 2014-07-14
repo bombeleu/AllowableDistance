@@ -4,17 +4,10 @@ using System.Collections;
 
 public class AllowableDistance: MonoBehaviour
 {
-<<<<<<< HEAD
 	#region Public
 	[HideInInspector]
 	public float allowableDistance = 1.0f;
 	#endregion
-=======
-	[HideInInspector]
-	public float allowableDistance = 10.0f;
-
-	private AllowableDistance Distance;
->>>>>>> origin/master
 
 	#region Private
 	private float currentDistance = 0.0f;
@@ -54,33 +47,16 @@ public class AllowableDistance: MonoBehaviour
 
 		if(!this.isEnter)
 		{
-<<<<<<< HEAD
 			if(this.currentDistance <= Distance.allowableDistance) {SendMessage("OnEnterAllowableDistance", target); this.isEnter = true;}
-=======
-			if(this.currentDistance <= Distance.allowableDistance)
-			{  
-				this.OnEnterAllowableDistance();
-				this.isEnter = true;
-			}
->>>>>>> origin/master
+
 		}
 
 		if(this.isEnter)
 		{
-<<<<<<< HEAD
 			if(this.currentDistance <= Distance.allowableDistance) SendMessage("OnStayAllowableDistance", target);
 
 			if(this.currentDistance > Distance.allowableDistance) {SendMessage("OnExitAllowableDistance", target); this.isEnter = false;}
-=======
-			if(this.currentDistance > Distance.allowableDistance)
-				this.OnStayAllowableDistance();
 
-			if(this.currentDistance > Distance.allowableDistance)
-			{
-				this.OnExitAllowableDistance();
-				this.isEnter = false;
-			}
->>>>>>> origin/master
 		}
 	}
 
